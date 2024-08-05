@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    @for (movie of MovieResult; track $index) {
+    <div class="col-md-3">
+      <div>
+        <img
+          class="w-100"
+          [src]="imgPath + movie.poster_path"
+          alt="{{ movie.title }}"
+        />
+        <h5 class="">{{ movie.title ? movie.title : movie.name }}</h5>
+        <p class="">
+          {{ movie.overview?.split(" ")?.slice(0, 10)?.join(" ") }}
+        </p>
+      </div>
+    </div>
+    }
+  </div>
+</div>
